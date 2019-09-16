@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>salvar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input name="nome" [(ngModel)]="disciplina.nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Sigla</ion-label>
+    <ion-input name="sigla" [(ngModel)]="disciplina.sigla"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" shape="round" (click)="salvar()">salvar</ion-button>
+</ion-content>

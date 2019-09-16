@@ -1,0 +1,29 @@
+<ion-header>
+ <ion-toolbar color="secondary">
+  <ion-title> Calendário De Avaliações</ion-title>
+ </ion-toolbar>
+</ion-header>
+<ion-content>
+<title> Sala</title>
+<img src="http://icalendario.pt/media/imprimir/2019/mensal/junho/calendario-junho-2019-turquesa.png">
+
+<ion-label>Marcar:</ion-label>
+<br>
+<ion-radio></ion-radio>
+<ion-label> Avaliação</ion-label>
+<br>
+  <ion-radio></ion-radio>
+  <ion-label> Recuperação</ion-label>
+  <br>
+    <ion-radio></ion-radio>
+    <ion-label> Trabalho</ion-label>
+      <br>
+      <br>
+      <ion-label>Conteúdo:</ion-label>
+      <ion-textarea [(ngModel)]="conteudo"></ion-textarea>
+<br>
+<ion-button> Salvar</ion-button>
+<ion-button color="danger"> Excluir</ion-button>
+<ion-button color="dark" href="registrar"> Sair</ion-button>
+<ion-button href="listarprof" color="secondary"> lista de professores</ion-button>
+</ion-content>

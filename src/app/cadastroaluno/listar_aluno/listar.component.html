@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title> Lista de Alunos </ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let aluno of listaAlunos| async">
+      <ion-label>{{aluno.nome}}</ion-label>
+      <ion-label>{{aluno.email}}</ion-label>
+    </ion-item>
+    </ion-list>
+    <ion-button color="secondary" href="calendarioaluno"> Voltar </ion-button>
+  </ion-content>

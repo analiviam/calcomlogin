@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-title> Lista de Professores</ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let professor of listaProf| async">
+      <ion-label>{{professor.nome}}</ion-label>
+  <ion-label>{{professor.email}}</ion-label>
+    </ion-item>
+    </ion-list>
+    <ion-button href="calendarioprof"> Voltar </ion-button>
+  </ion-content>

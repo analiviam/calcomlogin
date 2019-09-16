@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title> Cadastrar </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+   <ion-label>nome:</ion-label>
+   <ion-input [(ngModel)]= "professor.nome" position= "floating"></ion-input>
+ </ion-item>
+ <ion-item>
+   <ion-label >e-mail:</ion-label>
+   <ion-input [(ngModel)]= "professor.email" position="floating"></ion-input>
+ </ion-item>
+ <ion-item>
+   <ion-label>cpf:</ion-label>
+   <ion-input [(ngModel)]= "professor.cpf" position= "floating" ></ion-input>
+ </ion-item>
+ <ion-item>
+   <ion-label >senha:</ion-label>
+   <ion-input  position= "floating" [(ngModel)]= "professor.senha" ></ion-input>
+ </ion-item>
+ <ion-label>salas:</ion-label>
+ <!--era pra estar escrito na horizontal, n sei porque está assim, isso vale pra todos-->
+ <!--não sabia se colocava valor ou não, mas coloquei só aí-->
+ <ion-list>
+
+ <ion-checkbox color="primary" name="1a" value="1a"></ion-checkbox>
+   <ion-label>1 Agroindústria</ion-label>
+ <br>
+ <ion-checkbox color="secondary" name="2a" value="2a"></ion-checkbox>
+<ion-label>2 Agroindústria</ion-label>
+<br>
+<ion-checkbox color="light" name="3a" value="3a"> </ion-checkbox>
+ <ion-label>3 Agroindústria</ion-label>
+<br>
+ <ion-checkbox color="dark" name="4a" value="4a"> </ion-checkbox>
+<ion-label>4 Agroindústria</ion-label>
+<br>
+<br>
+ <ion-checkbox color="primary" name="1i" value="1i"></ion-checkbox>
+<ion-label>1 Informática</ion-label>
+<br>
+ <ion-checkbox color="secondary" name="2i" value="2i"> </ion-checkbox>
+<ion-label>2 Informática</ion-label>
+<br>
+ <ion-checkbox color="light" name="3i" value="3i"> </ion-checkbox>
+<ion-label>3 Informática</ion-label>
+<br>
+ <ion-checkbox color="dark" name="4i" value="4i"></ion-checkbox>
+<ion-label>4 Informática</ion-label>
+<br>
+<br>
+
+ <ion-checkbox color="primary" name="1m" value="1m"> </ion-checkbox>
+<ion-label>1 Mecatrônica</ion-label>
+<br>
+ <ion-checkbox color="secondary" name="2m" value="2m"></ion-checkbox>
+<ion-label>2 Mecatrônica</ion-label>
+<br>
+<ion-checkbox color="light" name="3m" value="3m"> </ion-checkbox>
+<ion-label>3 Mecatrônica</ion-label>
+<br>
+ <ion-checkbox color="dark" name="4m" value="4m"></ion-checkbox>
+<ion-label>4 Mecatrônica</ion-label>
+</ion-list>
+
+<br>
+ <ion-button color="danger" href="login" (click)="salvarP()">Cadastrar</ion-button>
+ <br>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label>nome:</ion-label>
+    <ion-input [(ngModel)]="aluno.nome" position="floating"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label>e-mail:</ion-label>
+    <ion-input [(ngModel)]="aluno.email" position="floating"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label>cpf:</ion-label>
+    <ion-input [(ngModel)]="aluno.cpf" position="floating"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label>RA:</ion-label>
+    <ion-input [(ngModel)]="aluno.ra" position="floating"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label>senha:</ion-label>
+    <ion-input [(ngModel)]="aluno.senha" position="floating"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button color="success" href="home" (click)="salvar()">Cadastrar</ion-button>
+  <br>
+</ion-content>
