@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-label>Email</ion-label>
-  <ion-input type="text" name="email" [(ngModel)]="aluno.email"></ion-input>
-  <ion-label>Senha</ion-label>
-  <ion-input type="password" name="senha" [(ngModel)]="aluno.senha"></ion-input>
-  <ion-button (click)="logar()">Acessar</ion-button>
-<ion-button href="cadastroaluno">Cadastrar-se</ion-button>
- <ion-button (click)="redefinir()">mudar senha</ion-button>
+  <ion-label position="floating">Email</ion-label>
+  <ion-input  type="text" name="email" [(ngModel)]="aluno.email"></ion-input>
+  <ion-label position="floating">Senha</ion-label>
+  <ion-input type="password" name="senha" [(ngModel)]="aluno.senha" position="floating"></ion-input>
+  <ion-button (click)="logar()" color="success" expand="block">Acessar</ion-button>
+<ion-button color="danger" href="cadastroaluno" expand="block">Cadastrar-se</ion-button>
+ <ion-button color="primary" (click)="redefinir()" expand="block">mudar senha</ion-button>
 </ion-content>

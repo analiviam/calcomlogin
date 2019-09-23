@@ -25,19 +25,12 @@
 </ion-select-option>
 </ion-select>
 </ion-item>
-<ion-button expand="full" shape="round" (click)="salvar()">salvar</ion-button>
-<br>
-<ion-button color="danger"> Excluir</ion-button>
-<ion-button color="dark" href="registrar"> Sair</ion-button>
-<ion-button href="listarprof" color="secondary"> lista de professores</ion-button>
-<ion-list>
-  <ion-item *ngFor="let prova of listaProva | async" >
-    <ion-label>{{ prova.dia }}</ion-label>
-    <ion-label>{{ prova.disciplina.sigla}}</ion-label>
-  </ion-item>
-</ion-list>
+<ion-button color="danger"(click)="salvar()" expand='block'>salvar</ion-button>
+<ion-button href="disciplina" expand="block">Salvar Disciplina</ion-button>
+<ion-button href="listarprof" color="secondary" expand='block'>Lista dos Professores</ion-button>
+<ion-button color="dark" href="registrar" expand="block"> Sair</ion-button>
+
+</ion-content>
+
 
 <!--<ion-button (click)="excluir(prova.key)"></ion-button> -->
-
-<ion-button href="disciplina"> Salvar Alguma Disciplina</ion-button>
-</ion-content>

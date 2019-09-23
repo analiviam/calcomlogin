@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 
 import { Disciplina } from '../../disciplina/disciplina-entidade/entidade';
 import { Prova } from '../entidade-prova/prova';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { SalvarProva } from '../salvar-prova/salvar-prova';
 
 @Component({
@@ -16,7 +16,10 @@ import { SalvarProva } from '../salvar-prova/salvar-prova';
   templateUrl: './listar-prova.component.html'
 
 })
-export class ListarProva  {
+export class ListarProva implements OnInit {
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }
 
   listaProva: Observable<Prova[]>;
   listaFiltro: Prova[];
@@ -25,7 +28,8 @@ export class ListarProva  {
   valor: string;
   disciplina: Prova;
 
-    constructor(private fire: AngularFireDatabase, private rota: Router, private modal: ModalController) {
+
+    constructor(private fire: AngularFireDatabase, private rota: Router, private modal: ModalController, public alertController: AlertController) {
 
     this.listaProva = this.fire.list<Prova>('prova').snapshotChanges().pipe(
     map( lista => lista.map(linha => ({ key: linha.payload.key, ... linha.payload.val() })))
@@ -52,8 +56,24 @@ tela.present();
 }
 
 filtrar(){
+  this.listaProva.subscribe(prova => {
+       this.prova = prova;
+       this.listaFiltro = _.filter(this.prova, _.conforms(this.filtro));
+   })
+
    this.filtro['dia'] = val => val.includes(this.valor);
    this.listaFiltro = _.filter(this.prova, _.conforms(this.filtro));
  }
+
+ async presentAlert(prova) {
+     const alert = await this.alertController.create({
+       header: prova.dia,
+       subHeader: prova.disciplina.sigla,
+       message: 'conteúdo: '+prova.conteudo,
+       buttons: ['OK']
+     });
+
+     await alert.present();
+   }
 
 }
