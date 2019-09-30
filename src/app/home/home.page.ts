@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireDatabase } from '@angular/fire/database';
-//import {RedefinirComponent} from './cadastroaluno/redefinir/redefinir';
+import { Professor } from '../cadastroprof/entidadeprof/professor';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 export class HomePage {
 aluno:Aluno=new Aluno();
 listaAluno : Observable<Aluno[]>;
-
+professor : Professor = new Professor();
   constructor(private fire: AngularFireDatabase, private afAuth: AngularFireAuth, private router: Router){
     this.listaAluno = this.fire.list<Aluno>('aluno').snapshotChanges().pipe(
       map( lista => lista.map(linha => ({ key: linha.payload.key, ... linha.payload.val() })))
@@ -28,7 +28,11 @@ listaAluno : Observable<Aluno[]>;
   ).catch( (erro) => console.log(erro) );
   }
 
+  redefinirSenha(){
+    this.afAuth.auth.sendPasswordResetEmail(this.professor.email).then(
+        () => { this.router.navigate(['home']); }).catch((erro) => alert('Ocorreu um erro'));
 
+  }
   logout() {
   this.afAuth.auth.signOut();
   this.router.navigate(['/']);

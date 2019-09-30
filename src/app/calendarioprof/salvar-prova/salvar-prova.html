@@ -16,7 +16,15 @@
 <ion-item>
 <ion-label position="floating">Conteudo</ion-label>
 <ion-input  [(ngModel)]="prova.conteudo"></ion-input>
-</ion-item>
+</ion-item> <!--
+<ion-item>
+    <ion-label>Tipo</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+      <ion-select-option value="trabalho">Trabalho</ion-select-option>
+      <ion-select-option value="prova">Prova</ion-select-option>
+      <ion-select-option value="recuperacao">Recupeação</ion-select-option>
+    </ion-select> 
+  </ion-item> -->
 <ion-item>
 <ion-label position="floating">Disciplina</ion-label>
 <ion-select [(ngModel)]="prova.disciplina">
@@ -27,6 +35,7 @@
 </ion-item>
 <ion-button color="danger"(click)="salvar()" expand='block'>salvar</ion-button>
 <ion-button href="disciplina" expand="block">Salvar Disciplina</ion-button>
+<ion-button href="listar-prova" color="tertiary" expand="block">Lista de Avaliações</ion-button>
 <ion-button href="listarprof" color="secondary" expand='block'>Lista dos Professores</ion-button>
 <ion-button color="dark" href="registrar" expand="block"> Sair</ion-button>
 

@@ -25,6 +25,7 @@ import { RedefinirComponent} from './cadastroprof/redefinir/redefinir.component'
 
 import {AngularFireModule} from '@angular/fire';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, CadastroalunoComponent,
@@ -45,6 +46,7 @@ AngularFireDatabaseModule, AngularFireModule.initializeApp({
   ],
   providers: [
     StatusBar,
+    AngularFireAuth,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
