@@ -13,24 +13,26 @@ import { Professor } from '../cadastroprof/entidadeprof/professor';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-aluno:Aluno=new Aluno();
-listaAluno : Observable<Aluno[]>;
+//aluno:Aluno=new Aluno();
+//listaAluno : Observable<Aluno[]>;
 professor : Professor = new Professor();
+listaProf: Observable<Professor[]>
+
   constructor(private fire: AngularFireDatabase, private afAuth: AngularFireAuth, private router: Router){
-    this.listaAluno = this.fire.list<Aluno>('aluno').snapshotChanges().pipe(
+    this.listaProf = this.fire.list<Professor>('professor').snapshotChanges().pipe(
       map( lista => lista.map(linha => ({ key: linha.payload.key, ... linha.payload.val() })))
     );
   }
 
   logar(){
-  this.afAuth.auth.signInWithEmailAndPassword(this.aluno.email, this.aluno.senha).then(
+  this.afAuth.auth.signInWithEmailAndPassword(this.professor.email, this.professor.senha).then(
   () => { this.router.navigate(['salvar-prova']); }
   ).catch( (erro) => console.log(erro) );
   }
 
   redefinirSenha(){
-    this.afAuth.auth.sendPasswordResetEmail(this.professor.email).then(
-        () => { this.router.navigate(['home']); }).catch((erro) => alert('Ocorreu um erro'));
+this.router.navigate(['redefinir']);
+
 
   }
   logout() {

@@ -2,5 +2,7 @@
 <ion-toolbar></ion-toolbar>
 </ion-header>
 <ion-content>
-<ion-button (click)="redefinirSenha()"></ion-button>
+<ion-label position = "floating">Email</ion-label>
+<ion-input [(ngModel)] = "professor.email" name = "email"></ion-input>
+<ion-button (click)="redefinirSenha()">VAI</ion-button>
 </ion-content>

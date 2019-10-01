@@ -5,12 +5,14 @@
 </ion-header>
 <ion-content>
   <h5>BEM VINDO PROFESSOR(A) {{professor.nome}}</h5>
-<ion-item>
-  <ion-label>MATÉRIA:</ion-label>
-  <ion-input [(ngModel)]="materia" position="floating"></ion-input>
-  </ion-item>
+
 
 <h5> Deseja editar o calendário de qual sala?</h5>
+  <ion-item>
+   <ion-label>aaaa</ion-label>
+  </ion-item>
+
+
 
   <ion-radio color="primary" name="1a" value="1a"> </ion-radio>
   <ion-label> 1 Agroindustria</ion-label>
@@ -26,7 +28,7 @@
   <!--exemplo, o objetivo é que só apareça as salas que o professor cadastrou-->
 
  <ion-item>
-    <ion-button href="calendarioprof">Entrar</ion-button>
-    <ion-button href="login" color="danger">Sair</ion-button>
+    <ion-button href="salvar-prova">Entrar</ion-button>
+    <ion-button href="home" color="danger">Sair</ion-button>
     </ion-item>
 </ion-content>
