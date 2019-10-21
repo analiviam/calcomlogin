@@ -4,13 +4,21 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <form #meuForm='ngForm'>
   <ion-item>
    <ion-label>nome:</ion-label>
-   <ion-input [(ngModel)]= "professor.nome" position= "floating"></ion-input>
+   <ion-input #nome='ngModel' [(ngModel)]="professor.nome" name="nome" position="floating" minlength="6" required ></ion-input>
+   <span style='color:red' *ngIf="nome.errors && nome.touched">
+     <ion-label [hidden]= 'nome.error.required'>Nome é obrigatório </ion-label>
+     <ion-label [hidden]= 'nome.errors.minlength'>Mínimo de 6 carácteres </ion-label>
+   </span>
  </ion-item>
  <ion-item>
    <ion-label >e-mail:</ion-label>
-   <ion-input [(ngModel)]= "professor.email" position="floating"></ion-input>
+   <ion-input #email='ngModel' [(ngModel)]="professor.email" name="email" position="floating"  required ></ion-input>
+   <span style='color:red' *ngIf="email.errors && email.touched">
+     <ion-label [hidden]= 'email.error.required'>E-mail é obrigatório </ion-label>
+   </span>
  </ion-item>
  <ion-item>
    <ion-label>cpf:</ion-label>
@@ -18,8 +26,13 @@
  </ion-item>
  <ion-item>
    <ion-label >senha:</ion-label>
-   <ion-input  position= "floating" [(ngModel)]= "professor.senha" ></ion-input>
+   <ion-input #senha='ngModel' [(ngModel)]="professor.senha" type="password" name="senha" position="floating" minlength="6" required ></ion-input>
+   <span style='color:red' *ngIf="senha.errors && senha.touched">
+     <ion-label [hidden]= 'senha.errors.required'>Senha é obrigatório </ion-label>
+     <ion-label [hidden]= 'senha.error.minlength'>Mínimo de 6 carácteres </ion-label>
+   </span>
  </ion-item>
+
  <ion-label>salas:</ion-label>
  <!--era pra estar escrito na horizontal, n sei porque está assim, isso vale pra todos-->
  <!--não sabia se colocava valor ou não, mas coloquei só aí-->
@@ -66,5 +79,6 @@
 </ion-list>
 
 <br>
+ </form>
  <ion-button color="danger" href="home" (click)="salvarP()">Cadastrar</ion-button>
  <br>
